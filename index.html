@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotoCare - Website Maintenance Motor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Moto<span>Care</span></a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#beranda">Beranda</a>
+        <a href="#cek-service">Cek Service</a>
+        <a href="#panduan">Panduan</a>
+        <a href="#riwayat">Riwayat</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="beranda">
+    <div class="container hero-wrapper">
+      <div class="hero-content">
+        <p class="badge">Maintenance Motor Harian</p>
+        <h1>Rawat Motormu Lebih Mudah</h1>
+        <p>
+          MotoCare membantu kamu mengetahui kapan motor perlu ganti oli,
+          service karburator atau throttle body, cek rem, ban, aki, CVT,
+          filter udara, dan perawatan penting lainnya.
+        </p>
+        <a href="#cek-service" class="btn-primary">Mulai Cek Jadwal Service</a>
+      </div>
+
+      <div class="hero-illustration">
+        <div class="motor-card">
+          <div class="motor-icon">🏍️</div>
+          <h3>MotoCare</h3>
+          <p>Jadwal service lebih terpantau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Input -->
+  <main>
+    <section class="section" id="cek-service">
+      <div class="container">
+        <div class="section-heading">
+          <p class="badge">Cek Jadwal</p>
+          <h2>Masukkan Data Motor</h2>
+          <p>
+            Isi kilometer motor saat ini dan kilometer terakhir setiap
+            perawatan dilakukan.
+          </p>
+        </div>
+
+        <form class="maintenance-form" id="maintenanceForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="namaMotor">Nama Motor</label>
+              <input type="text" id="namaMotor" placeholder="Contoh: Vario 125" required />
+            </div>
+
+            <div class="form-group">
+              <label for="jenisMotor">Jenis Motor</label>
+              <select id="jenisMotor" required>
+                <option value="">Pilih jenis motor</option>
+                <option value="Matic">Matic</option>
+                <option value="Bebek">Bebek</option>
+                <option value="Sport">Sport</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="kmSekarang">Kilometer Motor Saat Ini</label>
+              <input type="number" id="kmSekarang" min="0" placeholder="Contoh: 15000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmOli">KM Terakhir Ganti Oli Mesin</label>
+              <input type="number" id="kmOli" min="0" placeholder="Contoh: 13000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmKarbu">KM Terakhir Service Karbu / Throttle Body</label>
+              <input type="number" id="kmKarbu" min="0" placeholder="Contoh: 10000" requiread />
+            </div>
+
+            <div class="form-group">
+              <label for="kmCvt">KM Terakhir Service CVT</label>
+              <input type="number" id="kmCvt" min="0" placeholder="Khusus matic" />
+            </div>
+
+            <div class="form-group">
+              <label for="kmBusi">KM Terakhir Ganti Busi</label>
+              <input type="number" id="kmBusi" min="0" placeholder="Contoh: 8000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmRem">KM Terakhir Cek Rem</label>
+              <input type="number" id="kmRem" min="0" placeholder="Contoh: 12000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmBan">KM Terakhir Cek Ban</label>
+              <input type="number" id="kmBan" min="0" placeholder="Contoh: 12000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmAki">KM Terakhir Cek Aki</label>
+              <input type="number" id="kmAki" min="0" placeholder="Contoh: 10000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmOliGardan">KM Terakhir Ganti Oli Gardan</label>
+              <input type="number" id="kmOliGardan" min="0" placeholder="Khusus matic" />
+            </div>
+
+            <div class="form-group">
+              <label for="kmFilterUdara">KM Terakhir Cek Filter Udara</label>
+              <input type="number" id="kmFilterUdara" min="0" placeholder="Contoh: 11000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kmRantai">KM Terakhir Cek Rantai</label>
+              <input type="number" id="kmRantai" min="0" placeholder="Khusus bebek / sport" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Cek Rekomendasi</button>
+            <button type="reset" class="btn-secondary">Reset Form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Dashboard Ringkasan -->
+    <section class="section result-section" id="hasilSection">
+      <div class="container">
+        <div class="section-heading">
+          <p class="badge">Dashboard</p>
+          <h2>Ringkasan Perawatan</h2>
+          <p id="motorInfo">Hasil pengecekan akan tampil setelah data diisi.</p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3 id="totalItem">0</h3>
+            <p>Total Item</p>
+          </div>
+
+          <div class="summary-card safe">
+            <h3 id="totalAman">0</h3>
+            <p>Aman</p>
+          </div>
+
+          <div class="summary-card warning">
+            <h3 id="totalSegera">0</h3>
+            <p>Segera Service</p>
+          </div>
+
+          <div class="summary-card danger">
+            <h3 id="totalWajib">0</h3>
+            <p>Wajib Service</p>
+          </div>
+        </div>
+
+        <div class="result-grid" id="resultGrid">
+          <div class="empty-state">
+            <p>Belum ada hasil. Silakan isi form terlebih dahulu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panduan Service -->
+    <section class="section guide-section" id="panduan">
+      <div class="container">
+        <div class="section-heading">
+          <p class="badge">Panduan</p>
+          <h2>Daftar Panduan Service</h2>
+          <p>
+            Pahami beberapa perawatan penting agar motor tetap nyaman,
+            aman, dan awet digunakan setiap hari.
+          </p>
+        </div>
+
+        <div class="guide-grid">
+          <article class="guide-card">
+            <h3>Kenapa oli harus diganti rutin?</h3>
+            <p>
+              Oli berfungsi melumasi mesin, mengurangi gesekan, dan menjaga
+              suhu mesin tetap stabil. Jika telat diganti, performa motor bisa
+              menurun.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Fungsi service karbu / throttle body</h3>
+            <p>
+              Service bagian ini membantu menjaga suplai udara dan bahan bakar
+              tetap bersih sehingga tarikan motor lebih responsif.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Pentingnya service CVT untuk matic</h3>
+            <p>
+              CVT yang bersih membuat akselerasi motor matic lebih halus dan
+              mengurangi risiko getaran saat motor berjalan.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Kapan harus cek rem?</h3>
+            <p>
+              Rem sebaiknya dicek secara berkala, terutama jika tuas terasa
+              terlalu dalam, muncul bunyi, atau pengereman mulai berkurang.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Kapan harus cek ban?</h3>
+            <p>
+              Ban perlu dicek dari tekanan angin, ketebalan alur, retak, dan
+              benda tajam yang menempel agar perjalanan tetap aman.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Pentingnya filter udara</h3>
+            <p>
+              Filter udara menjaga kotoran agar tidak masuk ke ruang bakar.
+              Filter yang kotor bisa membuat motor boros dan tarikan berat.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Perawatan rantai motor</h3>
+            <p>
+              Untuk motor bebek dan sport, rantai perlu dibersihkan,
+              dilumasi, dan disetel agar tidak terlalu kendor atau terlalu
+              kencang.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Riwayat -->
+    <section class="section history-section" id="riwayat">
+      <div class="container">
+        <div class="section-heading">
+          <p class="badge">Riwayat</p>
+          <h2>Riwayat Maintenance</h2>
+          <p>
+            Data pengecekan terakhir akan tersimpan otomatis di browser
+            menggunakan localStorage.
+          </p>
+        </div>
+
+        <div class="history-actions">
+          <button class="btn-danger" id="clearHistoryBtn">Hapus Riwayat</button>
+        </div>
+
+        <div class="history-list" id="historyList">
+          <div class="empty-state">
+            <p>Belum ada riwayat pengecekan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 MotoCare. Website maintenance motor sederhana tanpa backend.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
